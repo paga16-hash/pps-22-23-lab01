@@ -34,11 +34,14 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public Optional<Integer> previous() {
-        return Optional.empty();
+        if(position == -1){
+            position = this.size() - 1;
+        }
+        return this.isEmpty() ? Optional.empty() : Optional.of(this.list.get(position--));
     }
 
     @Override
     public void reset() {
-
+        this.position = 0;
     }
 }
