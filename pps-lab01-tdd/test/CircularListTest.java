@@ -1,11 +1,7 @@
 import lab01.tdd.CircularList;
 import lab01.tdd.CircularListImpl;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -77,7 +73,5 @@ public class CircularListTest {
         assertEquals(Optional.of(2), this.circularList.next());
         this.circularList.reset();
         assertEquals(Optional.of(1), this.circularList.next());
-
     }
-
 }
