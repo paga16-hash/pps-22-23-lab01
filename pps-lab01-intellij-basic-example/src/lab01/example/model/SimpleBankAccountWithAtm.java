@@ -19,14 +19,9 @@ public class SimpleBankAccountWithAtm implements BankAccount{
         return this.balance;
     }
 
+
     @Override
     public void deposit(final int userID, final double amount) {
-        if (checkUser(userID)) {
-            this.balance += amount;
-        }
-    }
-
-    public void depositFromAtm(final int userID, final double amount) {
         if (checkUser(userID)) {
             this.balance += amount - ATM_OPERATION_FEE;
         }
@@ -34,12 +29,6 @@ public class SimpleBankAccountWithAtm implements BankAccount{
 
     @Override
     public void withdraw(final int userID, final double amount) {
-        if (checkUser(userID) && isWithdrawAllowed(amount)) {
-            this.balance -= amount;
-        }
-    }
-
-    public void withdrawFromAtm(final int userID, final double amount) {
         if (checkUser(userID) && isWithdrawAllowed(amount + ATM_OPERATION_FEE)) {
             this.balance -= amount - ATM_OPERATION_FEE;
         }
