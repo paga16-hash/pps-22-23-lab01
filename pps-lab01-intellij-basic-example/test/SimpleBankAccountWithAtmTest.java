@@ -7,21 +7,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SimpleBankAccountWithAtmTest {
-
-
-    private AccountHolder accountHolder;
-    private BankAccount bankAccount;
+class SimpleBankAccountWithAtmTest extends AbstractBankAccountTest{
 
     @BeforeEach
     void beforeEach(){
         accountHolder = new AccountHolder("Mario", "Rossi", 1);
         bankAccount = new SimpleBankAccountWithAtm(accountHolder, 0);
-    }
-
-    @Test
-    void testInitialBalance() {
-        assertEquals(0, bankAccount.getBalance());
     }
 
     @Test
