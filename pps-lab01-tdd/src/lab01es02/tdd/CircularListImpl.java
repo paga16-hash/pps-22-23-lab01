@@ -1,6 +1,5 @@
 package lab01es02.tdd;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class CircularListImpl implements CircularList {
 

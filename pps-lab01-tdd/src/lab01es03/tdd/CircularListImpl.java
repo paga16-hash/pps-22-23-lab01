@@ -1,5 +1,4 @@
 package lab01es03.tdd;
-import lab01es03.tdd.CircularList;
 
 import java.util.*;
 import java.util.function.Predicate;
