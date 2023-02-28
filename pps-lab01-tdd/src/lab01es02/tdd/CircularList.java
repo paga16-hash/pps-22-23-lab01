@@ -1,5 +1,6 @@
-package lab01es02;
+package lab01es02.tdd;
 
+import java.util.Iterator;
 import java.util.Optional;
 
 /**
@@ -31,12 +32,12 @@ public interface CircularList {
      * Provides an iterator which yields next elements, circularly
      * @return the iterator which yields next elements
      */
-    Optional<Integer> forwardIterator();
+    Iterator<Integer> forwardIterator();
 
     /**
      * Provides an iterator which yields previous elements, circularly
      * @return the iterator which yields previous elements
      */
-    Optional<Integer> backwardIterator();
+    Iterator<Integer> backwardIterator();
 
 }

@@ -57,7 +57,7 @@ public class CircularListTest {
     }
 
     @Test
-    public void testPreviousWithCircularity(){
+    public void testPreviousWithCircularity() {
         this.circularList.add(1);
         this.circularList.add(2);
         this.circularList.previous();
