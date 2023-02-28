@@ -1,8 +1,13 @@
+package lab01es02.tdd;
+
 import lab01es02.tdd.CircularList;
 import lab01es02.tdd.CircularListImpl;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,13 +32,33 @@ class CircularListIteratorImplTest {
         this.circularList.add(1);
         this.circularList.add(2);
         this.circularList.add(3);
-
         Iterator<Integer> iterator = this.circularList.forwardIterator();
         assertEquals(1, iterator.next());
         assertEquals(2, iterator.next());
         assertEquals(3, iterator.next());
         assertEquals(1, iterator.next());
         assertEquals(2, iterator.next());
+    }
+
+    @Test
+    public void testBackwardIterator() {
+        this.circularList.add(1);
+        this.circularList.add(2);
+        this.circularList.add(3);
+        Iterator<Integer> iterator = this.circularList.backwardIterator();
+        assertEquals(3, iterator.next());
+        assertEquals(2, iterator.next());
+        assertEquals(1, iterator.next());
+        assertEquals(3, iterator.next());
+        assertEquals(2, iterator.next());
+    }
+
+    @Test
+    public void testEmptyBackwardAndForwardIterator() {
+        Iterator<Integer> backwardIterator = this.circularList.backwardIterator();
+        Iterator<Integer> forwardIterator = this.circularList.forwardIterator();
+        assertThrows(NoSuchElementException.class, backwardIterator::next);
+        assertThrows(NoSuchElementException.class, forwardIterator::next);
     }
 
 }

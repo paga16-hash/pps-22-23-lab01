@@ -1,13 +1,10 @@
 package lab01es02.tdd;
-import javax.management.InstanceNotFoundException;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
+import java.util.NoSuchElementException;
 
 public class CircularListImpl implements CircularList {
 
-    private final lab01.tdd.CircularList list = new lab01.tdd.CircularListImpl();
+    private final lab01es01.tdd.CircularList list = new lab01es01.tdd.CircularListImpl();
     @Override
     public void add(int element) {
         this.list.add(element);
@@ -28,7 +25,7 @@ public class CircularListImpl implements CircularList {
         return new Iterator<>() {
             @Override
             public boolean hasNext() {
-                return true;
+                return !list.isEmpty();
             }
 
             @Override
@@ -41,15 +38,15 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public Iterator<Integer> backwardIterator() {
-        return new Iterator<Integer>() {
+        return new Iterator<>() {
             @Override
             public boolean hasNext() {
-                return true;
+                return !list.isEmpty();
             }
 
             @Override
             public Integer next() {
-                return null;
+                return list.previous().orElseThrow();
             }
         };
     }
