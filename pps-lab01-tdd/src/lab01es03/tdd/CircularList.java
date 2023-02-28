@@ -1,6 +1,8 @@
-package lab01es02.tdd;
+package lab01es03.tdd;
 
-import java.util.Iterator;
+import java.util.Collection;
+import java.util.Optional;
+import java.util.function.Predicate;
 
 /**
  * Represents a list of integers, with a built-in iterator that is bidirectional and circular.
@@ -28,15 +30,9 @@ public interface CircularList {
     boolean isEmpty();
 
     /**
-     * Provides an iterator which yields next elements, circularly
-     * @return the iterator which yields next elements
+     * Provides a Collection containing the next elements that satisfies a given condition
+     * @return the next elements that satisfies a given condition
      */
-    Iterator<Integer> forwardIterator();
-
-    /**
-     * Provides an iterator which yields previous elements, circularly
-     * @return the iterator which yields previous elements
-     */
-    Iterator<Integer> backwardIterator();
+    Optional<Collection<Integer>> filteredNext(Predicate<? super Object> condition);
 
 }

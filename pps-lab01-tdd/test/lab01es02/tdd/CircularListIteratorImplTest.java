@@ -1,14 +1,7 @@
 package lab01es02.tdd;
-
-import lab01es02.tdd.CircularList;
-import lab01es02.tdd.CircularListImpl;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.NoSuchElementException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CircularListIteratorImplTest {
