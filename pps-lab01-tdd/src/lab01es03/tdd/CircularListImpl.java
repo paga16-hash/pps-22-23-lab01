@@ -24,7 +24,7 @@ public class CircularListImpl implements CircularList {
     public Optional<Integer> filteredNext(Predicate<Integer> condition) {
         for (int i = 0; i < list.size(); i++) {
             Optional<Integer> current = list.next();
-            if(current.isPresent() && condition.test(current.get())){
+            if(current.isPresent() && condition.test(current.get())) {
                 return current;
             }
         }
