@@ -1,10 +1,9 @@
 package lab01es02.tdd;
-import lab01es01.tdd.CircularListImpl;
 import java.util.Iterator;
 
-public class CircularListIteratorImpl implements CircularList {
+public class CircularListImpl implements CircularList {
 
-    private final lab01es01.tdd.CircularList list = new CircularListImpl();
+    private final lab01es01.tdd.CircularList list = new lab01es01.tdd.CircularListImpl();
     @Override
     public void add(int element) {
         this.list.add(element);

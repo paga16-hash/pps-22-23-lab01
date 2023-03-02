@@ -5,10 +5,10 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * The test suite for testing the step 2 CircularListIteratorImpl implementation
+ * The test suite for testing the step 2 CircularListImpl implementation
  */
 class CircularListTest {
-    private final CircularList circularList = new CircularListIteratorImpl();
+    private final CircularList circularList = new CircularListImpl();
 
     @Test
     public void testElementsInsertion() {

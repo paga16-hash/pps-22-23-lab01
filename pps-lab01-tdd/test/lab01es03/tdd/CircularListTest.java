@@ -2,6 +2,7 @@ package lab01es03.tdd;
 
 import org.junit.jupiter.api.Test;
 import java.util.Optional;
+import java.util.function.Predicate;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -30,9 +31,11 @@ class CircularListTest {
     @Test
     public void testMultipleFilteredNext() {
         populateList();
-        assertEquals(Optional.empty(), this.circularList.filteredNext(x -> x > 3));
-        assertEquals(Optional.of(1), this.circularList.filteredNext(x -> x > 0));
-        assertEquals(Optional.of(3), this.circularList.filteredNext(x -> x.equals(3)));
+        Predicate<Integer> odd = x -> x % 2 == 1;
+        assertEquals(Optional.of(1), this.circularList.filteredNext(odd));
+        assertEquals(Optional.of(3), this.circularList.filteredNext(odd));
+        assertEquals(Optional.of(1), this.circularList.filteredNext(odd));
+        assertEquals(Optional.of(3), this.circularList.filteredNext(odd));
     }
 
     @Test
