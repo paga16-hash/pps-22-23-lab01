@@ -2,7 +2,6 @@ package lab01.example;
 
 import lab01.example.model.AccountHolder;
 import lab01.example.model.BankAccount;
-import lab01.example.model.SimpleBankAccount;
 
 public class Main {
 

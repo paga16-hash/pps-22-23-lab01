@@ -1,5 +1,5 @@
 import lab01.example.model.AccountHolder;
-import lab01.example.model.SimpleBankAccount;
+import lab01.example.SimpleBankAccount;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 

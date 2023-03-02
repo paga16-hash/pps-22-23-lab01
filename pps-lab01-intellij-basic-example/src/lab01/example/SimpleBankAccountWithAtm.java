@@ -1,4 +1,7 @@
-package lab01.example.model;
+package lab01.example;
+
+import lab01.example.model.AbstractBankAccount;
+import lab01.example.model.AccountHolder;
 
 public class SimpleBankAccountWithAtm extends AbstractBankAccount {
     private static final int ATM_OPERATION_FEE = 1;

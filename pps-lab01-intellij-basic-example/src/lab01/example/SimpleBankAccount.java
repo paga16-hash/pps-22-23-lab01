@@ -1,4 +1,7 @@
-package lab01.example.model;
+package lab01.example;
+
+import lab01.example.model.AbstractBankAccount;
+import lab01.example.model.AccountHolder;
 
 public class SimpleBankAccount extends AbstractBankAccount {
     public SimpleBankAccount(AccountHolder holder, double balance) {
