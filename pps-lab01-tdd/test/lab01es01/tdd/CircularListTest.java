@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * The test suite for testing the CircularList implementation
+ * The test suite for testing the step 1 CircularList implementation
  */
 public class CircularListTest {
 
@@ -44,6 +44,7 @@ public class CircularListTest {
         populateList();
         this.circularList.next();
         this.circularList.next();
+        this.circularList.next();
         assertEquals(Optional.of(1), this.circularList.next());
     }
 
@@ -55,24 +56,23 @@ public class CircularListTest {
     @Test
     public void testPreviousOnSingleElementList(){
         populateList();
-        assertEquals(Optional.of(1), this.circularList.previous());
+        assertEquals(Optional.of(3), this.circularList.previous());
     }
 
     @Test
     public void testPreviousWithCircularity() {
         populateList();
-        this.circularList.previous();
-        assertEquals(Optional.of(1), this.circularList.previous());
+        assertEquals(Optional.of(3), this.circularList.previous());
     }
 
     @Test
     public void testSomePreviousAndNextWithCircularity() {
         populateList();
         this.circularList.previous();
-        assertEquals(Optional.of(1), this.circularList.previous());
+        assertEquals(Optional.of(2), this.circularList.previous());
         this.circularList.previous();
         this.circularList.next();
-        assertEquals(Optional.of(2), this.circularList.previous());
+        assertEquals(Optional.of(1), this.circularList.previous());
     }
 
     @Test
@@ -83,5 +83,4 @@ public class CircularListTest {
         this.circularList.reset();
         assertEquals(Optional.of(1), this.circularList.next());
     }
-
 }

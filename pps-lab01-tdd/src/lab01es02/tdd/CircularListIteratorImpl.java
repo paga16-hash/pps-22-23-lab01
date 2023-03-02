@@ -1,9 +1,10 @@
 package lab01es02.tdd;
+import lab01es01.tdd.CircularListImpl;
 import java.util.Iterator;
 
-public class CircularListImpl implements CircularList {
+public class CircularListIteratorImpl implements CircularList {
 
-    private final lab01es01.tdd.CircularList list = new lab01es01.tdd.CircularListImpl();
+    private final lab01es01.tdd.CircularList list = new CircularListImpl();
     @Override
     public void add(int element) {
         this.list.add(element);
@@ -29,7 +30,6 @@ public class CircularListImpl implements CircularList {
 
             @Override
             public Integer next() {
-                //TODO Gestione caso con lista vuota
                 return list.next().orElseThrow();
             }
         };

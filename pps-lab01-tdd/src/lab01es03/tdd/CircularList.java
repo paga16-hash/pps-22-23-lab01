@@ -1,6 +1,4 @@
 package lab01es03.tdd;
-
-import java.util.Collection;
 import java.util.Optional;
 import java.util.function.Predicate;
 

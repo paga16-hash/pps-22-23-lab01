@@ -2,7 +2,6 @@ package lab01es03.tdd;
 
 import java.util.*;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class CircularListImpl implements CircularList {
 

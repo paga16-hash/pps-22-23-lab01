@@ -4,15 +4,22 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CircularListIteratorImplTest {
-    private final CircularList circularList = new CircularListImpl();
+/**
+ * The test suite for testing the step 2 CircularListIteratorImpl implementation
+ */
+class CircularListTest {
+    private final CircularList circularList = new CircularListIteratorImpl();
 
     @Test
-    public void testElementsInsertion(){
+    public void testElementsInsertion() {
+        populateList();
+        assertEquals(3, this.circularList.size());
+    }
+
+    private void populateList() {
         this.circularList.add(1);
         this.circularList.add(2);
         this.circularList.add(3);
-        assertEquals(3, this.circularList.size());
     }
 
     @Test
@@ -22,9 +29,7 @@ class CircularListIteratorImplTest {
 
     @Test
     public void testForwardIterator() {
-        this.circularList.add(1);
-        this.circularList.add(2);
-        this.circularList.add(3);
+        populateList();
         Iterator<Integer> iterator = this.circularList.forwardIterator();
         assertEquals(1, iterator.next());
         assertEquals(2, iterator.next());
@@ -35,9 +40,7 @@ class CircularListIteratorImplTest {
 
     @Test
     public void testBackwardIterator() {
-        this.circularList.add(1);
-        this.circularList.add(2);
-        this.circularList.add(3);
+        populateList();
         Iterator<Integer> iterator = this.circularList.backwardIterator();
         assertEquals(3, iterator.next());
         assertEquals(2, iterator.next());
@@ -53,5 +56,4 @@ class CircularListIteratorImplTest {
         assertThrows(NoSuchElementException.class, backwardIterator::next);
         assertThrows(NoSuchElementException.class, forwardIterator::next);
     }
-
 }
