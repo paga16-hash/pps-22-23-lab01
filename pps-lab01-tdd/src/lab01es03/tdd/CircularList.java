@@ -30,9 +30,9 @@ public interface CircularList {
     boolean isEmpty();
 
     /**
-     * Provides a Collection containing the next elements that satisfies a given condition
-     * @return the next elements that satisfies a given condition
+     * Provides an Optional<Integer> containing the next element that satisfies a given condition, Optional.empty() otherwise
+     * @return the next element that satisfies a given condition
      */
-    Optional<Collection<Integer>> filteredNext(Predicate<? super Object> condition);
+    Optional<Integer> filteredNext(Predicate<Integer> condition);
 
 }

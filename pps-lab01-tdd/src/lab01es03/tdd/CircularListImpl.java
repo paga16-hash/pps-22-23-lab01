@@ -23,9 +23,8 @@ public class CircularListImpl implements CircularList {
     }
 
     @Override
-    public Optional<Collection<Integer>> filteredNext(Predicate<? super Object> condition) {
-        Collection<Integer> unmodifiableCollection = this.list.stream().filter(condition).collect(Collectors.toUnmodifiableList());
-        return unmodifiableCollection.size() == 0 ?  Optional.of(unmodifiableCollection) : Optional.empty();
+    public Optional<Integer> filteredNext(Predicate<Integer> condition) {
+        return this.list.stream().filter(condition).findFirst();
     }
 
 }
