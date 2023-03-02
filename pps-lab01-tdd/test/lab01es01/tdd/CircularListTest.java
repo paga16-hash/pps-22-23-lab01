@@ -11,11 +11,15 @@ public class CircularListTest {
 
     private final CircularList circularList = new CircularListImpl();
 
-    @Test
-    public void testElementsInsertion(){
+    private void populateList() {
         this.circularList.add(1);
         this.circularList.add(2);
         this.circularList.add(3);
+    }
+
+    @Test
+    public void testElementsInsertion() {
+        populateList();
         assertEquals(3, this.circularList.size());
     }
 
@@ -31,14 +35,13 @@ public class CircularListTest {
 
     @Test
     public void testNextOnSingleElementList(){
-        this.circularList.add(1);
+        populateList();
         assertEquals(Optional.of(1), this.circularList.next());
     }
 
     @Test
     public void testNextWithCircularity(){
-        this.circularList.add(1);
-        this.circularList.add(2);
+        populateList();
         this.circularList.next();
         this.circularList.next();
         assertEquals(Optional.of(1), this.circularList.next());
@@ -51,22 +54,20 @@ public class CircularListTest {
 
     @Test
     public void testPreviousOnSingleElementList(){
-        this.circularList.add(1);
+        populateList();
         assertEquals(Optional.of(1), this.circularList.previous());
     }
 
     @Test
     public void testPreviousWithCircularity() {
-        this.circularList.add(1);
-        this.circularList.add(2);
+        populateList();
         this.circularList.previous();
         assertEquals(Optional.of(1), this.circularList.previous());
     }
 
     @Test
     public void testSomePreviousAndNextWithCircularity() {
-        this.circularList.add(1);
-        this.circularList.add(2);
+        populateList();
         this.circularList.previous();
         assertEquals(Optional.of(1), this.circularList.previous());
         this.circularList.previous();
@@ -76,12 +77,11 @@ public class CircularListTest {
 
     @Test
     public void testReset() {
-        this.circularList.add(1);
-        this.circularList.add(2);
-        this.circularList.add(3);
+        populateList();
         this.circularList.next();
         assertEquals(Optional.of(2), this.circularList.next());
         this.circularList.reset();
         assertEquals(Optional.of(1), this.circularList.next());
     }
+
 }
